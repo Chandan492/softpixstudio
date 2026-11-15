@@ -1,1 +1,262 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Softpix Studio | Independent Game Development Studio</title>
+<meta name="description" content="Softpix Studio is an independent game development studio creating engaging adventure, action and puzzle games.">
+<meta name="theme-color" content="#090b13">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:#090b13;color:#f5f5fa;
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,90%);margin:auto}
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(9,11,19,.94);
+  border-bottom:1px solid #252638;
+  backdrop-filter:blur(12px)
+}
+nav{
+  height:76px;display:flex;align-items:center;
+  justify-content:space-between
+}
+.logo{font-size:24px;font-weight:800;letter-spacing:-1px}
+.logo span{color:#9d7aff}
+.navlinks{display:flex;gap:28px;font-size:14px;color:#c2c1d0}
+.navlinks a:hover{color:#a98cff}
+.menu{display:none;background:none;color:white;border:0;font-size:26px}
+.hero{
+  min-height:590px;display:flex;align-items:center;
+  background:radial-gradient(ellipse at 75% 40%,#38205c 0%,#17132d 30%,#090b13 70%);
+  border-bottom:1px solid #252638
+}
+.hero-content{max-width:760px;padding:90px 0}
+.tag{
+  display:inline-block;color:#c5aaff;
+  border:1px solid #60448e;border-radius:30px;
+  padding:7px 15px;font-size:12px;letter-spacing:2px;
+  margin-bottom:25px
+}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.08;letter-spacing:-3px}
+.gradient{
+  background:linear-gradient(90deg,#a98aff,#62c7ff);
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.hero p{color:#b9b8c9;font-size:17px;max-width:570px;margin:25px 0 32px}
+.btn{
+  display:inline-block;background:#9168ed;
+  padding:13px 23px;border-radius:7px;
+  font-weight:700;font-size:14px
+}
+.btn:hover{background:#a887ff}
+.btn-outline{
+  margin-left:10px;background:transparent;
+  border:1px solid #55506c
+}
+section{padding:90px 0}
+.section-tag{color:#a98aff;font-size:12px;letter-spacing:3px;font-weight:bold}
+h2{font-size:36px;letter-spacing:-1px;margin:12px 0}
+.subtitle{color:#aaaabd;max-width:620px;margin-bottom:38px}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center
+}
+.about-panel{
+  background:linear-gradient(145deg,#211b39,#11131e);
+  border:1px solid #39304f;border-radius:16px;
+  padding:38px;min-height:230px
+}
+.about-panel h3{font-size:27px;margin-bottom:12px}
+.about-panel p,.about-text{color:#aaaabd}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}
+.stat{border:1px solid #292a3b;padding:18px;border-radius:10px}
+.stat strong{font-size:24px;color:#b59aff;display:block}
+.stat span{font-size:12px;color:#aaaabd}
+.games{background:#0d0f19;border-top:1px solid #252638;border-bottom:1px solid #252638}
+.game-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.game-card{
+  overflow:hidden;border:1px solid #292a3d;
+  border-radius:14px;background:#141622
+}
+.game-art{
+  height:230px;display:flex;align-items:center;
+  justify-content:center;text-align:center;
+  font-size:32px;font-weight:800;letter-spacing:-1px;
+  background:radial-gradient(circle at 50% 40%,#553b87,#19172c 65%)
+}
+.game-card:nth-child(2) .game-art{
+  background:radial-gradient(circle at 50% 40%,#80512c,#241b19 70%)
+}
+.game-info{padding:24px}
+.game-info p{color:#aaaabd;margin:10px 0 16px;font-size:14px}
+.game-type{font-size:11px;color:#b79bff;letter-spacing:2px}
+.expertise-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px
+}
+.expertise-card{
+  padding:27px;border:1px solid #292a3d;
+  border-radius:12px;background:#121420
+}
+.expertise-card .symbol{font-size:29px;margin-bottom:15px}
+.expertise-card p{color:#aaaabd;font-size:14px;margin-top:8px}
+.contact{
+  text-align:center;
+  background:radial-gradient(ellipse at 50% 100%,#322050,#090b13 65%)
+}
+.contact p{color:#aaaabd;margin:12px auto 25px}
+footer{border-top:1px solid #292a3b;padding:28px 0;color:#85869a;font-size:13px}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:700px){
+ .navlinks{display:none;position:absolute;top:76px;left:0;width:100%;background:#11131e;padding:25px;flex-direction:column;gap:18px}
+ .navlinks.open{display:flex}
+ .menu{display:block}
+ .hero{min-height:520px}
+ .hero-content{padding:70px 0}
+ .about-grid,.game-grid,.expertise-grid{grid-template-columns:1fr}
+ .stats{gap:8px}
+ .stat{padding:12px}
+ h2{font-size:30px}
+ section{padding:65px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="container">
+  <nav>
+   <a class="logo" href="#">SOFTPIX<span> STUDIO.</span></a>
+   <button class="menu" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+   <div class="navlinks">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#games">Our Games</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#contact">Contact</a>
+   </div>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container">
+  <div class="hero-content">
+   <div class="tag">INDEPENDENT GAME DEVELOPMENT STUDIO</div>
+   <h1>We Create Games.<br><span class="gradient">We Create Experiences.</span></h1>
+   <p>Welcome to Softpix Studio. We build engaging gaming experiences through creativity, technology and imagination.</p>
+   <a class="btn" href="#games">Explore Our Games ↗</a>
+   <a class="btn btn-outline" href="#about">Discover Us</a>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container">
+  <div class="about-grid">
+   <div>
+    <div class="section-tag">WHO WE ARE</div>
+    <h2>About Softpix Studio</h2>
+    <p class="about-text">Softpix Studio is an independent game development studio focused on creating original games for players who love adventure, action and puzzles.</p>
+    <br>
+    <p class="about-text">From creative concepts to immersive gameplay, we bring ideas to life with a passion for game design, 3D art and interactive experiences.</p>
+   </div>
+   <div class="about-panel">
+    <h3>Ideas into Interactive Worlds.</h3>
+    <p>Our focus is simple: create enjoyable games with thoughtful design, engaging mechanics and memorable experiences.</p>
+    <div class="stats">
+     <div class="stat"><strong>3D</strong><span>Game Art</span></div>
+     <div class="stat"><strong>Unity</strong><span>Development</span></div>
+     <div class="stat"><strong>Indie</strong><span>Studio</span></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="games" id="games">
+ <div class="container">
+  <div class="section-tag">OUR WORK</div>
+  <h2>Games & Projects</h2>
+  <p class="subtitle">Discover the worlds and experiences created at Softpix Studio.</p>
+  <div class="game-grid">
+   <article class="game-card">
+    <div class="game-art">MAAKHAN CHOR</div>
+    <div class="game-info">
+     <div class="game-type">ADVENTURE • PLATFORMER</div>
+     <h3>Maakhan Chor</h3>
+     <p>An adventure platform game inspired by the playful world of Little Krishna.</p>
+    </div>
+   </article>
+   <article class="game-card">
+    <div class="game-art">HAPPY DUSSEHRA</div>
+    <div class="game-info">
+     <div class="game-type">ACTION • ARCHERY</div>
+     <h3>Happy Dussehra Archery</h3>
+     <p>An archery gaming experience inspired by the celebration of Dussehra.</p>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="expertise">
+ <div class="container">
+  <div class="section-tag">WHAT WE DO</div>
+  <h2>Our Expertise</h2>
+  <p class="subtitle">Combining design, technology and creativity to develop interactive experiences.</p>
+  <div class="expertise-grid">
+   <div class="expertise-card">
+    <div class="symbol">🎮</div>
+    <h3>Game Development</h3>
+    <p>Gameplay systems, mechanics and interactive experiences using Unity.</p>
+   </div>
+   <div class="expertise-card">
+    <div class="symbol">🧊</div>
+    <h3>3D Art & Design</h3>
+    <p>Creative 3D assets, low-poly models and visual environments using Blender.</p>
+   </div>
+   <div class="expertise-card">
+    <div class="symbol">💡</div>
+    <h3>Game Design</h3>
+    <p>Original concepts, level design, puzzles and engaging gameplay ideas.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container">
+  <div class="section-tag">LET'S CONNECT</div>
+  <h2>Have a Game Idea?</h2>
+  <p>Follow our journey and stay connected with Softpix Studio.</p>
+  <a class="btn" href="mailto:contact@softpixstudio.com">Contact Our Studio ↗</a>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-inner">
+  <div>© <span id="year"></span> Softpix Studio. All rights reserved.</div>
+  <div>Independent Game Development Studio</div>
+ </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+document.querySelectorAll(".navlinks a").forEach(link=>{
+ link.addEventListener("click",()=>{
+  document.querySelector(".navlinks").classList.remove("open");
+ });
+});
+</script>
+</body>
+</html>
