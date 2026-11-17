@@ -146,6 +146,31 @@ footer{border-top:1px solid #292a3b;padding:28px 0;color:#85869a;font-size:13px}
     color: #ffffff;
     text-decoration: underline;
 }  
+
+.game-card-link{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
+  border-radius:14px;
+}
+.game-card-link:hover{
+  color:inherit;
+  text-decoration:none;
+}
+.game-card-link .game-card{
+  height:100%;
+  transition:transform .3s ease,border-color .3s ease;
+}
+.game-card-link:hover .game-card{
+  transform:translateY(-5px);
+  border-color:#9b6cff;
+}
+.game-card-link:focus-visible{
+  outline:2px solid #b59aff;
+  outline-offset:4px;
+}
+
 </style>
 </head>
 
@@ -211,7 +236,8 @@ footer{border-top:1px solid #292a3b;padding:28px 0;color:#85869a;font-size:13px}
   <h2>Games & Projects</h2>
   <p class="subtitle">Discover the worlds and experiences created at Softpix Studio.</p>
   <div class="game-grid">
-   <article class="game-card">
+   <a class="game-card-link" href="https://play.google.com/store/apps/details?id=com.softpixstudio.maakhanchor" target="_blank" rel="noopener noreferrer" aria-label="Open Maakhan Chor on Google Play">
+    <article class="game-card">
     <div class="game-art">
       <img src="maakhan-chor.jpg" alt="Maakhan Chor gameplay screenshot" loading="lazy">
      </div>
@@ -221,7 +247,9 @@ footer{border-top:1px solid #292a3b;padding:28px 0;color:#85869a;font-size:13px}
      <p>An adventure platform game inspired by the playful world of Little Krishna.</p>
     </div>
    </article>
-   <article class="game-card">
+   </a>
+   <a class="game-card-link" href="https://play.google.com/store/apps/details?id=com.softpixstudio.happydussehra" target="_blank" rel="noopener noreferrer" aria-label="Open Happy Dussehra Archery on Google Play">
+    <article class="game-card">
     <div class="game-art">
       <img src="happy-dussehra.jpg" alt="Happy Dussehra Archery gameplay screenshot" loading="lazy">
      </div>
@@ -231,6 +259,7 @@ footer{border-top:1px solid #292a3b;padding:28px 0;color:#85869a;font-size:13px}
      <p>An archery gaming experience inspired by the celebration of Dussehra.</p>
     </div>
    </article>
+   </a>
   </div>
  </div>
 </section>
