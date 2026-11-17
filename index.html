@@ -88,13 +88,20 @@ h2{font-size:36px;letter-spacing:-1px;margin:12px 0}
   border-radius:14px;background:#141622
 }
 .game-art{
-  height:230px;display:flex;align-items:center;
-  justify-content:center;text-align:center;
-  font-size:32px;font-weight:800;letter-spacing:-1px;
-  background:radial-gradient(circle at 50% 40%,#553b87,#19172c 65%)
+  height:230px;
+  overflow:hidden;
+  background:#171725;
 }
-.game-card:nth-child(2) .game-art{
-  background:radial-gradient(circle at 50% 40%,#80512c,#241b19 70%)
+.game-art img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .4s ease;
+}
+.game-card:hover .game-art img{
+  transform:scale(1.05);
 }
 .game-info{padding:24px}
 .game-info p{color:#aaaabd;margin:10px 0 16px;font-size:14px}
@@ -205,7 +212,9 @@ footer{border-top:1px solid #292a3b;padding:28px 0;color:#85869a;font-size:13px}
   <p class="subtitle">Discover the worlds and experiences created at Softpix Studio.</p>
   <div class="game-grid">
    <article class="game-card">
-    <div class="game-art">MAAKHAN CHOR</div>
+    <div class="game-art">
+      <img src="images/maakhan-chor.jpg" alt="Maakhan Chor gameplay screenshot" loading="lazy">
+     </div>
     <div class="game-info">
      <div class="game-type">ADVENTURE • PLATFORMER</div>
      <h3>Maakhan Chor</h3>
@@ -213,7 +222,9 @@ footer{border-top:1px solid #292a3b;padding:28px 0;color:#85869a;font-size:13px}
     </div>
    </article>
    <article class="game-card">
-    <div class="game-art">HAPPY DUSSEHRA</div>
+    <div class="game-art">
+      <img src="images/happy-dussehra.jpg" alt="Happy Dussehra Archery gameplay screenshot" loading="lazy">
+     </div>
     <div class="game-info">
      <div class="game-type">ACTION • ARCHERY</div>
      <h3>Happy Dussehra Archery</h3>
